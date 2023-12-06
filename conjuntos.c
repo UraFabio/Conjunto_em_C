@@ -5,9 +5,9 @@
 
 
 
-// FUN«’ES AUXILIARES:
+// FUN√á√ïES AUXILIARES:
 
-void trocarElementos(Conjunto* conjunto, int a, int b){ // Troca a posiÁ„o de 2 elementos no conjunto
+void trocarElementos(Conjunto* conjunto, int a, int b){ // Troca a posi√ß√£o de 2 elementos no conjunto
 	int aux = conjunto->elementos[a];
 	conjunto->elementos[a] = conjunto->elementos[b];
 	conjunto->elementos[b] = aux;
@@ -15,7 +15,7 @@ void trocarElementos(Conjunto* conjunto, int a, int b){ // Troca a posiÁ„o de 2 
 
 void automatico(Conjunto* conjunto){ // Preenche o conjunto com numero aleatorios
 	srand(time(NULL));
- 	while(conjunto->tamanho < (20)){
+ 	while(conjunto->tamanho < (20) && conjunto->tamanho < MAX){
  		adicionarElemento(conjunto, (rand() % 99) + 1);
 	 }
 	
@@ -41,7 +41,7 @@ void menu(){
 
 
 
-// FUN«’ES ENVOLVENDO 1 CONJUNTO:
+// FUN√á√ïES ENVOLVENDO 1 CONJUNTO:
 
 void criarConjunto(Conjunto* conjunto){
 	conjunto->tamanho = 0;
@@ -49,7 +49,7 @@ void criarConjunto(Conjunto* conjunto){
 
 int adicionarElemento(Conjunto* conjunto, int n){
 	
-	// Deve-se verificar se o elemento j· est· no conjunto
+	// Deve-se verificar se o elemento j√° est√° no conjunto
 	int i;
 	for(i = 0; i<conjunto->tamanho; ++i){
 		if(n == conjunto->elementos[i]){
@@ -58,7 +58,7 @@ int adicionarElemento(Conjunto* conjunto, int n){
 		}
 	}
 	
-	// Verifica se tem espaÁo no conjunto
+	// Verifica se tem espa√ßo no conjunto
 	if(conjunto->tamanho < MAX){
 		conjunto->elementos[conjunto->tamanho] = n;
 		conjunto->tamanho++;
@@ -117,7 +117,7 @@ void buscarElemento(Conjunto conjunto, int n){
 ///////////////////////////////////////////////////////////////////
 
 
-// FUN«’ES ENVOLVENDO 2 CONJUNTOS:
+// FUN√á√ïES ENVOLVENDO 2 CONJUNTOS:
 
 Conjunto uniaoConjuntos(Conjunto c1, Conjunto c2){
 	Conjunto resultado;
